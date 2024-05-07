@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "updating system"
-
+sudo su
 apt update
 apt upgrade -y
 
