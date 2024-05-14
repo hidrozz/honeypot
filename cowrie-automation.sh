@@ -18,10 +18,14 @@ sudo -u cowrie git clone http://github.com/cowrie/cowrie /home/cowrie/cowrie
 
 # Step 4: Setup Virtual Environment
 echo "Setting up virtual environment..."
-sudo -u cowrie bash -c 'cd /home/cowrie/cowrie && python3 -m venv cowrie-env && source cowrie-env/bin/activate && python -m pip install --upgrade pip && python -m pip install --upgrade -r requirements.txt'
+sudo -u cowrie bash -c 'cd /home/cowrie/cowrie && python3 -m venv cowrie-env'
 
-# Step 5: Start Cowrie
+# Step 5: Activate the virtual environment and update pip, install requirements
+echo "Activating virtual environment and installing packages..."
+sudo -u cowrie bash -c 'source /home/cowrie/cowrie/cowrie-env/bin/activate && python -m pip install --upgrade pip && python -m pip install --upgrade -r /home/cowrie/cowrie/requirements.txt'
+
+# Step 6: Start Cowrie
 echo "Starting Cowrie..."
-sudo -u cowrie bash -c 'cd /home/cowrie/cowrie && source cowrie-env/bin/activate && bin/cowrie start'
+sudo -u cowrie bash -c 'source /home/cowrie/cowrie/cowrie-env/bin/activate && cd /home/cowrie/cowrie && bin/cowrie start'
 
 echo "Installation and startup complete."
