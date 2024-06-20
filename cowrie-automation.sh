@@ -2,7 +2,7 @@
 
 # Step 0: Update and Upgrade
 echo "Updating and upgrading system packages..."
-sudo apt-get update -y && sudo apt-get upgrade -y
+sudo apt-get update -y
 
 # Step 1: Install system dependencies
 echo "Installing system dependencies..."
